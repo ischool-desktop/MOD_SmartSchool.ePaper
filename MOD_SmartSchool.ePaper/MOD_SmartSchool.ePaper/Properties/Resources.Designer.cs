@@ -60,6 +60,13 @@ namespace MOD_SmartSchool.ePaper.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap files_up_64 {
+            get {
+                object obj = ResourceManager.GetObject("files_up_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap mail_ok_64 {
             get {
                 object obj = ResourceManager.GetObject("mail_ok_64", resourceCulture);

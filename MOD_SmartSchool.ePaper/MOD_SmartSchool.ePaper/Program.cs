@@ -13,7 +13,7 @@ namespace MOD_SmartSchool.ePaper
         public static void Main()
         {
             //電子報表的提供者。
-            SmartSchool.ePaper.DispatcherProvider.Register("ischool", new DispatcherImp(), true);
+            //SmartSchool.ePaper.DispatcherProvider.Register("ischool", new DispatcherImp(), true);
 
             //管理功能
             MotherForm.StartMenu["電子報表管理"].Enable = Permissions.電子報表管理權限;
@@ -21,6 +21,16 @@ namespace MOD_SmartSchool.ePaper
             MotherForm.StartMenu["電子報表管理"].Click += delegate
             {
                 new ElectronicPaperManager().ShowDialog();
+            };
+
+            //New
+            RibbonBarItem StudentItem = FISCA.Presentation.MotherForm.RibbonBarItems["學生", "其它"];
+            StudentItem["電子報表上傳"].Image = Properties.Resources.files_up_64;
+            StudentItem["電子報表上傳"].Enable = Permissions.學生電子報表上傳權限;
+            StudentItem["電子報表上傳"].Click += delegate
+            {
+                SelectOneFile f = new SelectOneFile();
+                f.ShowDialog();
             };
 
             //資料項目
@@ -43,7 +53,9 @@ namespace MOD_SmartSchool.ePaper
                 K12.Presentation.NLDPanels.Course.AddDetailBulider(new FISCA.Presentation.DetailBulider<Course.Course_PaperPalmerworm>());
 
 
-
+            //New
+            Catalog ribbon = RoleAclSource.Instance["學生"]["功能按鈕"];
+            ribbon.Add(new RibbonFeature(Permissions.學生電子報表上傳, "電子報表上傳"));
 
             Catalog detail = RoleAclSource.Instance["學生"]["資料項目"];
             detail.Add(new DetailItemFeature(Permissions.學生電子報表, "學生電子報表"));

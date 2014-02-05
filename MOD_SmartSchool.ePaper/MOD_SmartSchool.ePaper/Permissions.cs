@@ -57,5 +57,18 @@ namespace MOD_SmartSchool.ePaper
                 return FISCA.Permission.UserAcl.Current[電子報表管理].Executable;
             }
         }
+
+        public static string 學生電子報表上傳 { get { return "student.ePaper.fabbb24a-5ac2-437a-a818-c199b3f32ad2"; } }
+
+        /// <summary>
+        /// 學生電子報
+        /// </summary>
+        public static bool 學生電子報表上傳權限
+        {
+            get
+            {
+                return FISCA.Permission.UserAcl.Current[學生電子報表上傳].Executable;
+            }
+        }
     }
 }

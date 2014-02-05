@@ -12,16 +12,20 @@
     <AssemblyName>MOD_SmartSchool.ePaper</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\Documents and Settings\Dylan.Huang\桌面\ischool desktop\addmodules\MOD_SmartSchool.ePaper\</OutputPath>
+    <OutputPath>obj\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,62 +39,88 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells, Version=4.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+    <Reference Include="Aspose.Cells, Version=4.3.0.0, Culture=neutral, PublicKeyToken=9a40d5a4b59e5256, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\Aspose.Cells.dll</HintPath>
+      <HintPath>Library\Aspose.Cells.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Aspose.Words, Version=4.4.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+    <Reference Include="Aspose.Words, Version=4.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\Aspose.Words.dll</HintPath>
+      <HintPath>Library\Aspose.Words.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus, Version=2.0.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Campus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.ePaper, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Campus.ePaper.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>Library\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
-    <Reference Include="FISCA">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.dll</HintPath>
+    <Reference Include="FISCA, Version=2.1.4.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FISCA.Authentication">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.Authentication.dll</HintPath>
+    <Reference Include="FISCA.Authentication, Version=1.9.0.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Authentication.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FISCA.DSAClient">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.DSAClient.dll</HintPath>
+    <Reference Include="FISCA.DSAClient, Version=1.0.1.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.DSAClient.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FISCA.DSAUtil">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.DSAUtil.dll</HintPath>
+    <Reference Include="FISCA.DSAUtil, Version=3.9.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.DSAUtil.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FISCA.Permission">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.Permission.dll</HintPath>
+    <Reference Include="FISCA.LogAgent, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.LogAgent.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FISCA.Presentation">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.Presentation.dll</HintPath>
+    <Reference Include="FISCA.Permission, Version=1.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Permission.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FISCA.UDT">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\FISCA.UDT.dll</HintPath>
+    <Reference Include="FISCA.Presentation, Version=1.1.0.19, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Presentation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="K12.Data">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\K12.Data.dll</HintPath>
+    <Reference Include="FISCA.UDT, Version=1.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.UDT.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="K12.Presentation">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\K12.Presentation.dll</HintPath>
+    <Reference Include="K12.Data, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\K12.Data.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SmartSchool.ePaper">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\SmartSchool.ePaper.dll</HintPath>
+    <Reference Include="K12.Presentation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\K12.Presentation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SmartSchool.ErrorReporting">
-      <HintPath>..\..\..\..\..\TFS2010-Git\Library\SmartSchool.ErrorReporting.dll</HintPath>
+    <Reference Include="SmartSchool.ePaper, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.ePaper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmartSchool.ErrorReporting, Version=1.0.2.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartSchool.ErrorReporting.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -122,7 +152,6 @@
     <Compile Include="DetailContentBase.designer.cs">
       <DependentUpon>DetailContentBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="DispatcherImp.cs" />
     <Compile Include="EditElectronicPaper.cs" />
     <Compile Include="ElectronicPaperEditor.cs">
       <SubType>Form</SubType>
@@ -137,6 +166,12 @@
       <DependentUpon>ElectronicPaperManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FeatureBase.cs" />
+    <Compile Include="Ribbon\SelectOneFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ribbon\SelectOneFile.designer.cs">
+      <DependentUpon>SelectOneFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student_PaperPalmerworm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,12 +180,6 @@
     </Compile>
     <Compile Include="Permissions.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProgressForm.designer.cs">
-      <DependentUpon>ProgressForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -178,11 +207,11 @@
     <EmbeddedResource Include="ElectronicPaperManager.resx">
       <DependentUpon>ElectronicPaperManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon\SelectOneFile.resx">
+      <DependentUpon>SelectOneFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student_PaperPalmerworm.resx">
       <DependentUpon>Student_PaperPalmerworm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProgressForm.resx">
-      <DependentUpon>ProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,7 +224,51 @@
   <ItemGroup>
     <None Include="Resources\mail_ok_64.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Library\Aspose.Cells.dll" />
+    <Content Include="Library\Aspose.Cells.xml" />
+    <Content Include="Library\Aspose.Words.dll" />
+    <Content Include="Library\Aspose.Words.xml" />
+    <Content Include="Library\Campus.dll" />
+    <Content Include="Library\Campus.ePaper.dll" />
+    <Content Include="Library\Campus.ePaper.pdb" />
+    <Content Include="Library\Campus.pdb" />
+    <Content Include="Library\DevComponents.DotNetBar2.dll" />
+    <Content Include="Library\FISCA.Authentication.dll" />
+    <Content Include="Library\FISCA.Authentication.pdb" />
+    <Content Include="Library\FISCA.Authentication.xml" />
+    <Content Include="Library\FISCA.dll" />
+    <Content Include="Library\FISCA.DSAClient.dll" />
+    <Content Include="Library\FISCA.DSAClient.pdb" />
+    <Content Include="Library\FISCA.DSAClient.xml" />
+    <Content Include="Library\FISCA.DSAUtil.dll" />
+    <Content Include="Library\FISCA.DSAUtil.pdb" />
+    <Content Include="Library\FISCA.DSAUtil.xml" />
+    <Content Include="Library\FISCA.LogAgent.dll" />
+    <Content Include="Library\FISCA.LogAgent.pdb" />
+    <Content Include="Library\FISCA.LogAgent.xml" />
+    <Content Include="Library\FISCA.pdb" />
+    <Content Include="Library\FISCA.Permission.dll" />
+    <Content Include="Library\FISCA.Permission.pdb" />
+    <Content Include="Library\FISCA.Permission.xml" />
+    <Content Include="Library\FISCA.Presentation.dll" />
+    <Content Include="Library\FISCA.Presentation.pdb" />
+    <Content Include="Library\FISCA.Presentation.xml" />
+    <Content Include="Library\FISCA.UDT.dll" />
+    <Content Include="Library\FISCA.UDT.pdb" />
+    <Content Include="Library\FISCA.UDT.xml" />
+    <Content Include="Library\K12.Data.dll" />
+    <Content Include="Library\K12.Data.pdb" />
+    <Content Include="Library\K12.Data.xml" />
+    <Content Include="Library\K12.Presentation.dll" />
+    <Content Include="Library\K12.Presentation.xml" />
+    <Content Include="Library\SmartSchool.ePaper.dll" />
+    <Content Include="Library\SmartSchool.ePaper.xml" />
+    <Content Include="Library\SmartSchool.ErrorReporting.dll" />
+    <Content Include="Library\SmartSchool.ErrorReporting.pdb" />
+    <Content Include="Library\SmartSchool.ErrorReporting.xml" />
+    <None Include="Resources\files_up_64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
