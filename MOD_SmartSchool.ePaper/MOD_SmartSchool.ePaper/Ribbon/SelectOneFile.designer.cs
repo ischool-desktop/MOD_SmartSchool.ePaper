@@ -36,7 +36,6 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.checkBoxX3 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -46,12 +45,13 @@
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnUpdate.ForeColor = System.Drawing.Color.Red;
-            this.btnUpdate.Location = new System.Drawing.Point(12, 213);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 236);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(105, 25);
             this.btnUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "選擇檔案與上傳";
+            this.btnUpdate.Tooltip = "選擇檔案,並解析報表所屬學生";
             this.btnUpdate.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // labelX1
@@ -63,7 +63,7 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(12, 167);
+            this.labelX1.Location = new System.Drawing.Point(12, 192);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(189, 39);
             this.labelX1.TabIndex = 2;
@@ -103,7 +103,7 @@
             this.btnExit.AutoSize = true;
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(254, 234);
+            this.btnExit.Location = new System.Drawing.Point(254, 261);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 25);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -136,15 +136,13 @@
             this.checkBoxX1.BackgroundStyle.Class = "";
             this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.checkBoxX1.CheckBoxStyle = DevComponents.DotNetBar.eCheckBoxStyle.RadioButton;
-            this.checkBoxX1.Checked = true;
-            this.checkBoxX1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxX1.CheckValue = "Y";
-            this.checkBoxX1.Location = new System.Drawing.Point(13, 116);
+            this.checkBoxX1.Location = new System.Drawing.Point(13, 150);
             this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.Size = new System.Drawing.Size(80, 21);
+            this.checkBoxX1.Size = new System.Drawing.Size(213, 20);
             this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX1.TabIndex = 7;
-            this.checkBoxX1.Text = "系統編號";
+            this.checkBoxX1.TabStop = false;
+            this.checkBoxX1.Text = "系統編號\r\n<font color=\"#ED1C24\">範例:系統編號{123456}</font>";
             // 
             // checkBoxX2
             // 
@@ -156,34 +154,19 @@
             this.checkBoxX2.BackgroundStyle.Class = "";
             this.checkBoxX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.checkBoxX2.CheckBoxStyle = DevComponents.DotNetBar.eCheckBoxStyle.RadioButton;
-            this.checkBoxX2.Location = new System.Drawing.Point(106, 116);
+            this.checkBoxX2.Checked = true;
+            this.checkBoxX2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxX2.CheckValue = "Y";
+            this.checkBoxX2.Location = new System.Drawing.Point(13, 116);
             this.checkBoxX2.Name = "checkBoxX2";
-            this.checkBoxX2.Size = new System.Drawing.Size(54, 21);
+            this.checkBoxX2.Size = new System.Drawing.Size(161, 20);
             this.checkBoxX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX2.TabIndex = 8;
-            this.checkBoxX2.Text = "學號";
+            this.checkBoxX2.Text = "學號\r\n<font color=\"#ED1C24\">範例:學號(123456}</font>";
             // 
-            // checkBoxX3
+            // SelectOneFile
             // 
-            this.checkBoxX3.AutoSize = true;
-            this.checkBoxX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.checkBoxX3.BackgroundStyle.Class = "";
-            this.checkBoxX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX3.CheckBoxStyle = DevComponents.DotNetBar.eCheckBoxStyle.RadioButton;
-            this.checkBoxX3.Location = new System.Drawing.Point(173, 115);
-            this.checkBoxX3.Name = "checkBoxX3";
-            this.checkBoxX3.Size = new System.Drawing.Size(80, 21);
-            this.checkBoxX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX3.TabIndex = 9;
-            this.checkBoxX3.Text = "身分證號";
-            // 
-            // Form1
-            // 
-            this.ClientSize = new System.Drawing.Size(339, 267);
-            this.Controls.Add(this.checkBoxX3);
+            this.ClientSize = new System.Drawing.Size(339, 295);
             this.Controls.Add(this.checkBoxX2);
             this.Controls.Add(this.checkBoxX1);
             this.Controls.Add(this.labelX3);
@@ -192,7 +175,7 @@
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.btnUpdate);
-            this.Name = "Form1";
+            this.Name = "SelectOneFile";
             this.Text = "學生電子檔案上傳";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,6 +192,5 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX2;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX3;
     }
 }

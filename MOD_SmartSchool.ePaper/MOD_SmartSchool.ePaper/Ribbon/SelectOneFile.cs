@@ -24,31 +24,50 @@ namespace MOD_SmartSchool.ePaper
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "選擇檔案";
             ofd.Filter = "Word檔案 (*.doc)|*.doc";
+            ofd.Multiselect = false; //不可多選檔案
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                //不可多選檔案
-                ofd.Multiselect = false;
                 //開啟檔案
-                Document doc = new Document(ofd.FileName);
+                try
+                {
+                    Document doc = new Document(ofd.FileName);
 
-                if (checkBoxX1.Checked)
-                {
-                    //系統編號
-                    Update_ePaper ue = new Update_ePaper(doc, textBoxX1.Text, PrefixStudent.系統編號);
-                    ue.ShowDialog();
+                    if (checkBoxX1.Checked)
+                    {
+                        //系統編號
+                        Update_ePaper ue = new Update_ePaper(doc, textBoxX1.Text, PrefixStudent.系統編號);
+                        if (ue.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            MsgBox.Show("電子報表已上傳!!");
+                        }
+                        else
+                        {
+                            MsgBox.Show("已取消上傳電子報表");
+                        }
+                    }
+                    else
+                    {
+                        //學號
+                        Update_ePaper ue = new Update_ePaper(doc, textBoxX1.Text, PrefixStudent.學號);
+                        if (ue.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            MsgBox.Show("電子報表已上傳!!");
+                        }
+                        else
+                        {
+                            MsgBox.Show("已取消上傳電子報表");
+                        }
+                    }
                 }
-                else if (checkBoxX2.Checked)
+                catch (Exception ex)
                 {
-                    //學號
-                    Update_ePaper ue = new Update_ePaper(doc, textBoxX1.Text, PrefixStudent.學號);
-                    ue.ShowDialog();
+                    MsgBox.Show("發生錯誤!!\n" + ex.Message);
                 }
-                else
-                {
-                    //身分證號
-                    Update_ePaper ue = new Update_ePaper(doc, textBoxX1.Text, PrefixStudent.身分證號);
-                    ue.ShowDialog();
-                }
+
+                ////身分證號
+                //Update_ePaper ue = new Update_ePaper(doc, textBoxX1.Text, PrefixStudent.身分證號);
+                //ue.ShowDialog();
+
             }
             else
             {
