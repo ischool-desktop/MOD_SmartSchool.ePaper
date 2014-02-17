@@ -54,7 +54,7 @@
       <HintPath>Library\Campus.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Campus.ePaper, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Campus.ePaper, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\Campus.ePaper.dll</HintPath>
       <Private>False</Private>
@@ -230,8 +230,6 @@
     <Content Include="Library\Aspose.Words.dll" />
     <Content Include="Library\Aspose.Words.xml" />
     <Content Include="Library\Campus.dll" />
-    <Content Include="Library\Campus.ePaper.dll" />
-    <Content Include="Library\Campus.ePaper.pdb" />
     <Content Include="Library\Campus.pdb" />
     <Content Include="Library\DevComponents.DotNetBar2.dll" />
     <Content Include="Library\FISCA.Authentication.dll" />
@@ -267,6 +265,8 @@
     <Content Include="Library\SmartSchool.ErrorReporting.dll" />
     <Content Include="Library\SmartSchool.ErrorReporting.pdb" />
     <Content Include="Library\SmartSchool.ErrorReporting.xml" />
+    <Content Include="Library\Campus.ePaper.dll" />
+    <Content Include="Library\Campus.ePaper.pdb" />
     <None Include="Resources\files_up_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -95,7 +95,6 @@
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.Size = new System.Drawing.Size(241, 25);
             this.textBoxX1.TabIndex = 4;
-            this.textBoxX1.Text = "報表未命名";
             // 
             // btnExit
             // 
