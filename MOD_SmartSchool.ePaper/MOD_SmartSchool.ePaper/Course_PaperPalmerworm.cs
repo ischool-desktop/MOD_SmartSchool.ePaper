@@ -16,8 +16,8 @@ namespace MOD_SmartSchool.ePaper.Course
     public partial class Course_PaperPalmerworm : DetailContentBase
     {
         private BackgroundWorker _loader;
-        private string _CurrentID;
-        private string _RunningID;
+        //private string _CurrentID;
+        //private string _RunningID;
         private string _TargetName; //added by Cloud
 
         private string ViewerType { get { return "Course"; } }
@@ -104,8 +104,8 @@ namespace MOD_SmartSchool.ePaper.Course
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgEPaper,
                     paperHelper.GetText("@ID"),
-                    paperHelper.GetText("Format"),
                     paperHelper.GetText("PaperName"),
+                    paperHelper.GetText("Format"),
                     DateTimeFormat(paperHelper.GetText("Timestamp")));
                 dgEPaper.Rows.Add(row);
                 //row.Tag = paperHelper.GetText("Content");
@@ -169,7 +169,7 @@ namespace MOD_SmartSchool.ePaper.Course
             if (string.IsNullOrEmpty(base64string)) return;
 
             saveFileDialog1.FileName = "" + row.Cells[colPaperName.Index].Value;
-            saveFileDialog1.Filter = GetFilter("" + row.Cells[colFormat.Index].Value);
+            saveFileDialog1.Filter = tool.GetFilter("" + row.Cells[colFormat.Index].Value);
             if (saveFileDialog1.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -177,7 +177,7 @@ namespace MOD_SmartSchool.ePaper.Course
             {
                 //base64 轉 stream
                 MemoryStream stream = new MemoryStream(Convert.FromBase64String(base64string));
-                SaveFile(stream, saveFileDialog1.FileName, "" + row.Cells[colFormat.Index].Value);
+                tool.SaveFile(stream, saveFileDialog1.FileName, "" + row.Cells[colFormat.Index].Value);
             }
             catch (Exception ex)
             {
@@ -187,47 +187,6 @@ namespace MOD_SmartSchool.ePaper.Course
             }
 
             System.Diagnostics.Process.Start(saveFileDialog1.FileName);
-        }
-
-        private void SaveFile(MemoryStream stream, string filename, string format)
-        {
-            if (format == "xls")
-            {
-                Aspose.Cells.Workbook wb = new Aspose.Cells.Workbook();
-                wb.Open(stream);
-                wb.Save(filename, Aspose.Cells.FileFormatType.Excel2003);
-            }
-            else if (format == "xlsx")
-            {
-                Aspose.Cells.Workbook wb = new Aspose.Cells.Workbook();
-                wb.Open(stream);
-                wb.Save(filename, Aspose.Cells.FileFormatType.Excel2007Xlsx);
-            }
-            else if (format == "doc")
-            {
-                Aspose.Words.Document doc = new Aspose.Words.Document(stream);
-                doc.Save(filename, Aspose.Words.SaveFormat.Doc);
-            }
-            else if (format == "docx")
-            {
-                Aspose.Words.Document doc = new Aspose.Words.Document(stream);
-                doc.Save(filename, Aspose.Words.SaveFormat.Docx);
-            }
-        }
-
-        private string GetFilter(string format)
-        {
-            string filter = "";
-            if (format == "doc")
-                filter += "Word 2003 (*.doc)|*.doc";
-            else if (format == "docx")
-                filter += "Word 2007 (*.docx)|*.docx";
-            else if (format == "xls")
-                filter += "Excel 2003 (*.xls)|*.xls";
-            else if (format == "xlsx")
-                filter += "Excel 2007 (*.xlsx)|*.xlsx";
-            filter += "|所有檔案 (*.*)|*.*";
-            return filter;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace MOD_SmartSchool.ePaper
             btnUpdate.Enabled = false;
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "選擇檔案";
-            ofd.Filter = "Word檔案 (*.doc)|*.doc";
+            ofd.Filter = "Word檔案 (*.docx;*.doc)|*.docx;*.doc";
             ofd.Multiselect = true;
             if (ofd.ShowDialog() == DialogResult.OK)
             {

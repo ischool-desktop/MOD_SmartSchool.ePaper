@@ -15,6 +15,18 @@ namespace MOD_SmartSchool.ePaper
             //電子報表的提供者。
             //SmartSchool.ePaper.DispatcherProvider.Register("ischool", new DispatcherImp(), true);
 
+            //Aspose.Words.License lic_word = new Aspose.Words.License();
+            //System.IO.MemoryStream ms_word = new System.IO.MemoryStream(Properties.Resources.Aspose_Total_201402);
+            //lic_word.SetLicense(ms_word);
+
+            //Aspose.Pdf.License lic_pdf = new Aspose.Pdf.License();
+            //System.IO.MemoryStream ms_pdf = new System.IO.MemoryStream(Properties.Resources.Aspose_Total_201402);
+            //lic_pdf.SetLicense(ms_pdf);
+
+            //Aspose.Pdf.License lic_excel = new Aspose.Pdf.License();
+            //System.IO.MemoryStream ms_excel = new System.IO.MemoryStream(Properties.Resources.Aspose_Total_201402);
+            //lic_excel.SetLicense(ms_excel);
+
             //管理功能
             MotherForm.StartMenu["電子報表管理"].Enable = Permissions.電子報表管理權限;
             MotherForm.StartMenu["電子報表管理"].Image = Properties.Resources.mail_ok_64;

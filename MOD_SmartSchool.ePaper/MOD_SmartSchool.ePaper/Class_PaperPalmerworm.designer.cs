@@ -30,10 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgEPaper = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaperName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDownload = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +37,10 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaperName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgEPaper)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,8 +57,8 @@
             this.dgEPaper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEPaper.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
-            this.colFormat,
             this.colPaperName,
+            this.colFormat,
             this.colTimestamp});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -76,34 +76,6 @@
             this.dgEPaper.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEPaper.Size = new System.Drawing.Size(520, 176);
             this.dgEPaper.TabIndex = 0;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Visible = false;
-            // 
-            // colFormat
-            // 
-            this.colFormat.HeaderText = "Format";
-            this.colFormat.Name = "colFormat";
-            this.colFormat.ReadOnly = true;
-            this.colFormat.Visible = false;
-            // 
-            // colPaperName
-            // 
-            this.colPaperName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPaperName.HeaderText = "報表名稱";
-            this.colPaperName.Name = "colPaperName";
-            this.colPaperName.ReadOnly = true;
-            // 
-            // colTimestamp
-            // 
-            this.colTimestamp.HeaderText = "製表日期";
-            this.colTimestamp.Name = "colTimestamp";
-            this.colTimestamp.ReadOnly = true;
-            this.colTimestamp.Width = 140;
             // 
             // btnDownload
             // 
@@ -161,6 +133,33 @@
             // 
             this.saveFileDialog1.Title = "另存新檔";
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
+            // 
+            // colPaperName
+            // 
+            this.colPaperName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPaperName.HeaderText = "報表名稱";
+            this.colPaperName.Name = "colPaperName";
+            this.colPaperName.ReadOnly = true;
+            // 
+            // colFormat
+            // 
+            this.colFormat.HeaderText = "格式";
+            this.colFormat.Name = "colFormat";
+            this.colFormat.ReadOnly = true;
+            // 
+            // colTimestamp
+            // 
+            this.colTimestamp.HeaderText = "製表日期";
+            this.colTimestamp.Name = "colTimestamp";
+            this.colTimestamp.ReadOnly = true;
+            this.colTimestamp.Width = 140;
+            // 
             // Class_PaperPalmerworm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -184,10 +183,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFormat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPaperName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTimestamp;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaperName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFormat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTimestamp;
     }
 }
