@@ -95,6 +95,8 @@ namespace MOD_SmartSchool.ePaper
 
         void BGW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            btnUpdate.Enabled = true;
+            this.Text = "學生電子檔案上傳";
             if (!e.Cancelled)
             {
                 if (e.Error == null)
@@ -107,12 +109,10 @@ namespace MOD_SmartSchool.ePaper
                         Update_ePaper ue = new Update_ePaper(docList, textBoxX1.Text, PrefixStudent.系統編號);
                         if (ue.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
                         {
-                            this.Text = "學生電子檔案上傳(電子報表已上傳!!)";
                             MsgBox.Show("電子報表已上傳!!");
                         }
                         else
                         {
-                            this.Text = "學生電子檔案上傳(已取消!!)";
                             MsgBox.Show("已取消!!");
                         }
                     }
@@ -122,12 +122,10 @@ namespace MOD_SmartSchool.ePaper
                         Update_ePaper ue = new Update_ePaper(docList, textBoxX1.Text, PrefixStudent.學號);
                         if (ue.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
                         {
-                            this.Text = "學生電子檔案上傳(電子報表已上傳!!)";
                             MsgBox.Show("電子報表已上傳!!");
                         }
                         else
                         {
-                            this.Text = "學生電子檔案上傳(已取消!!)";
                             MsgBox.Show("已取消!!");
                         }
                     }
