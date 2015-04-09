@@ -30,11 +30,19 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPaperList = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOverview = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMetadata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSchoolYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSemester = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colItemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colViewerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSchoolYear = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboSemester = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.btnDownload = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -49,15 +57,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOverview = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMetadata = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSchoolYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSemester = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colItemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colViewerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaperList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +98,65 @@
             this.dgvPaperList.Size = new System.Drawing.Size(666, 316);
             this.dgvPaperList.TabIndex = 2;
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "名稱";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colOverview
+            // 
+            this.colOverview.HeaderText = "總覽";
+            this.colOverview.Name = "colOverview";
+            this.colOverview.Visible = false;
+            // 
+            // colMetadata
+            // 
+            this.colMetadata.HeaderText = "其他資訊";
+            this.colMetadata.Name = "colMetadata";
+            this.colMetadata.Visible = false;
+            // 
+            // colSchoolYear
+            // 
+            this.colSchoolYear.HeaderText = "學年度";
+            this.colSchoolYear.Name = "colSchoolYear";
+            this.colSchoolYear.Visible = false;
+            // 
+            // colSemester
+            // 
+            this.colSemester.HeaderText = "學期";
+            this.colSemester.Name = "colSemester";
+            this.colSemester.Visible = false;
+            // 
+            // colItemCount
+            // 
+            this.colItemCount.HeaderText = "項目";
+            this.colItemCount.Name = "colItemCount";
+            this.colItemCount.Visible = false;
+            this.colItemCount.Width = 75;
+            // 
+            // colViewerType
+            // 
+            this.colViewerType.FillWeight = 90F;
+            this.colViewerType.HeaderText = "對象";
+            this.colViewerType.Name = "colViewerType";
+            this.colViewerType.ReadOnly = true;
+            this.colViewerType.Width = 90;
+            // 
+            // colTimestamp
+            // 
+            this.colTimestamp.HeaderText = "建立時間";
+            this.colTimestamp.Name = "colTimestamp";
+            this.colTimestamp.ReadOnly = true;
+            this.colTimestamp.Width = 150;
+            // 
             // cboSchoolYear
             // 
             this.cboSchoolYear.DisplayMember = "Text";
@@ -110,7 +168,6 @@
             this.cboSchoolYear.Size = new System.Drawing.Size(121, 25);
             this.cboSchoolYear.TabIndex = 0;
             this.cboSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cboSchoolYear_SelectedIndexChanged);
-            this.cboSchoolYear.TextChanged += new System.EventHandler(this.cboSchoolYear_TextChanged);
             // 
             // cboSemester
             // 
@@ -126,7 +183,6 @@
             this.cboSemester.Size = new System.Drawing.Size(89, 25);
             this.cboSemester.TabIndex = 1;
             this.cboSemester.SelectedIndexChanged += new System.EventHandler(this.cboSemester_SelectedIndexChanged);
-            this.cboSemester.TextChanged += new System.EventHandler(this.cboSemester_TextChanged);
             // 
             // comboItem1
             // 
@@ -135,21 +191,6 @@
             // comboItem2
             // 
             this.comboItem2.Text = "2";
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
-            this.btnDownload.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDownload.Enabled = false;
-            this.btnDownload.Location = new System.Drawing.Point(354, 364);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(75, 23);
-            this.btnDownload.TabIndex = 3;
-            this.btnDownload.Text = "下載";
-            this.btnDownload.Visible = false;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // btnDelete
             // 
@@ -276,65 +317,6 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 150;
             // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.Visible = false;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.HeaderText = "名稱";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colOverview
-            // 
-            this.colOverview.HeaderText = "總覽";
-            this.colOverview.Name = "colOverview";
-            this.colOverview.Visible = false;
-            // 
-            // colMetadata
-            // 
-            this.colMetadata.HeaderText = "其他資訊";
-            this.colMetadata.Name = "colMetadata";
-            this.colMetadata.Visible = false;
-            // 
-            // colSchoolYear
-            // 
-            this.colSchoolYear.HeaderText = "學年度";
-            this.colSchoolYear.Name = "colSchoolYear";
-            this.colSchoolYear.Visible = false;
-            // 
-            // colSemester
-            // 
-            this.colSemester.HeaderText = "學期";
-            this.colSemester.Name = "colSemester";
-            this.colSemester.Visible = false;
-            // 
-            // colItemCount
-            // 
-            this.colItemCount.HeaderText = "項目";
-            this.colItemCount.Name = "colItemCount";
-            this.colItemCount.Visible = false;
-            this.colItemCount.Width = 75;
-            // 
-            // colViewerType
-            // 
-            this.colViewerType.FillWeight = 90F;
-            this.colViewerType.HeaderText = "對象";
-            this.colViewerType.Name = "colViewerType";
-            this.colViewerType.ReadOnly = true;
-            this.colViewerType.Width = 90;
-            // 
-            // colTimestamp
-            // 
-            this.colTimestamp.HeaderText = "建立時間";
-            this.colTimestamp.Name = "colTimestamp";
-            this.colTimestamp.ReadOnly = true;
-            this.colTimestamp.Width = 150;
-            // 
             // ElectronicPaperManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -345,7 +327,6 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.cboSemester);
             this.Controls.Add(this.cboSchoolYear);
             this.Controls.Add(this.dgvPaperList);
@@ -365,7 +346,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvPaperList;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboSchoolYear;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboSemester;
-        private DevComponents.DotNetBar.ButtonX btnDownload;
         private DevComponents.DotNetBar.ButtonX btnDelete;
         private DevComponents.DotNetBar.ButtonX btnExit;
         private DevComponents.DotNetBar.LabelX labelX1;

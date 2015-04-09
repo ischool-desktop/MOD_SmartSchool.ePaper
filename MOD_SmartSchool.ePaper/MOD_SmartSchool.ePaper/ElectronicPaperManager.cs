@@ -86,7 +86,7 @@ namespace MOD_SmartSchool.ePaper
             catch (Exception ex)
             {
                 SmartSchool.ErrorReporting.ReportingService.ReportException(ex);
-                MsgBox.Show("取得電子報表發生錯誤。");
+                MsgBox.Show("取得電子報表發生錯誤:\n" + ex.Message);
                 helper = new DSXmlHelper("BOOM");
             }
 
@@ -118,13 +118,6 @@ namespace MOD_SmartSchool.ePaper
             dgvPaperList.ResumeLayout();
         }
 
-        private void btnDownload_Click(object sender, EventArgs e)
-        {
-            if (dgvPaperList.SelectedRows.Count <= 0) return;
-            DataGridViewRow row = dgvPaperList.SelectedRows[0];
-
-        }
-
         private void btnRename_Click(object sender, EventArgs e)
         {
             if (dgvPaperList.SelectedRows.Count <= 0) return;
@@ -153,14 +146,23 @@ namespace MOD_SmartSchool.ePaper
             if (dgvPaperList.SelectedRows.Count <= 0) return;
             //DataGridViewRow row = dgvPaperList.SelectedRows[0];
 
+            StringBuilder sbMessage = new StringBuilder();
+            sbMessage.AppendLine("您確定要刪除以下電子報表?");
+
+            foreach (DataGridViewRow row in dgvPaperList.SelectedRows)
+            {
+                sbMessage.AppendLine("名稱：「" + row.Cells[colName.Index].Value + "」");
+            }
+
+
+            if (MsgBox.Show(sbMessage.ToString(), "刪除確認", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
             int count = 0; //added by Cloud
             StringBuilder sb = new StringBuilder(); //added by Cloud
             DataGridViewSelectedRowCollection rows = dgvPaperList.SelectedRows; //added by Cloud
             foreach (DataGridViewRow row in rows)
             {
-                if (MsgBox.Show("您確定要刪除「" + row.Cells[colName.Index].Value + "」嗎？", "刪除確認", MessageBoxButtons.YesNo) == DialogResult.No)
-                    continue;
-
                 try
                 {
                     String before = row.Cells[colName.Index].Value.ToString(); //added by Cloud
@@ -173,29 +175,20 @@ namespace MOD_SmartSchool.ePaper
                 catch (Exception ex)
                 {
                     SmartSchool.ErrorReporting.ReportingService.ReportException(ex);
-                    MsgBox.Show(ex.Message);
+                    MsgBox.Show("刪除作業發生錯誤:\n" + ex.Message);
+                    break;
                 }
                 //dgvPaperList.ClearSelection();
             }
             LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text);
             //added by Cloud
-            if(count>0)
-            FISCA.LogAgent.ApplicationLog.Log("電子報表管理", "刪除", "刪除 " + count + " 筆電子報表\r\n" + sb.ToString());
+            if (count > 0)
+                FISCA.LogAgent.ApplicationLog.Log("電子報表管理", "刪除", "已刪除「" + count + " 」筆電子報表\r\n" + sb.ToString());
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cboSchoolYear_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboSemester_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void cboSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
