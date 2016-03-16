@@ -73,15 +73,27 @@ namespace MOD_SmartSchool.ePaper
 
         private void ElectronicPaperManager_Load(object sender, EventArgs e)
         {
-            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text);
+            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text,false);
         }
 
-        private void LoadElectronicPaper(string school_year, string semester)
+        private void LoadElectronicPaper(string school_year, string semester,bool isDisplayAll)
         {
+
+            dgvPaperList.SuspendLayout();
+            dgvPaperList.Rows.Clear();
+
             DSXmlHelper helper = null;
             try
             {
-                helper = QueryElectronicPaper.GetDetailList(school_year, semester).GetContent();
+                if(isDisplayAll)
+                {
+                    helper = QueryElectronicPaper.GetDetailListALL().GetContent();
+                }
+                else
+                {
+                    helper = QueryElectronicPaper.GetDetailList(school_year, semester).GetContent();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -89,10 +101,7 @@ namespace MOD_SmartSchool.ePaper
                 MsgBox.Show("取得電子報表發生錯誤:\n" + ex.Message);
                 helper = new DSXmlHelper("BOOM");
             }
-
-            dgvPaperList.SuspendLayout();
-            dgvPaperList.Rows.Clear();
-
+            
             foreach (XmlElement paper in helper.GetElements("Paper"))
             {
                 DSXmlHelper paperHelper = new DSXmlHelper(paper);
@@ -106,12 +115,13 @@ namespace MOD_SmartSchool.ePaper
                     paperHelper.GetText("@ID"),
                     paperHelper.GetText("Name"),
                     paperHelper.GetText("Overview"),
-                    paperHelper.GetText("Metadata"),
-                    paperHelper.GetText("SchoolYear"),
-                    paperHelper.GetText("Semester"),
+                    paperHelper.GetText("Metadata"),                    
                     paperHelper.GetText("ItemCount"),
                     _viewers[paperHelper.GetText("ViewerType")],
-                    try_datetime.ToString("yyyy-MM-dd hh:mm:ss"));
+                    try_datetime.ToString("yyyy-MM-dd hh:mm:ss"),
+                    paperHelper.GetText("SchoolYear"),
+                    paperHelper.GetText("Semester")
+                    );
                 dgvPaperList.Rows.Add(row);
             }
 
@@ -180,7 +190,7 @@ namespace MOD_SmartSchool.ePaper
                 }
                 //dgvPaperList.ClearSelection();
             }
-            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text);
+            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text,false);
             //added by Cloud
             if (count > 0)
                 FISCA.LogAgent.ApplicationLog.Log("電子報表管理", "刪除", "已刪除「" + count + " 」筆電子報表\r\n" + sb.ToString());
@@ -193,12 +203,29 @@ namespace MOD_SmartSchool.ePaper
 
         private void cboSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text);
+            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text,false);
         }
 
         private void cboSemester_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text);
+            LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text,false);
+        }
+
+        private void chkDisplayAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkDisplayAll.Checked)
+            {
+                // 顯示全部
+                cboSchoolYear.Enabled = false;
+                cboSemester.Enabled = false;
+                LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text, true);
+            }
+            else
+            {
+                cboSchoolYear.Enabled = true;
+                cboSemester.Enabled = true;
+                LoadElectronicPaper(cboSchoolYear.Text, cboSemester.Text,false);
+            }
         }
     }
 }

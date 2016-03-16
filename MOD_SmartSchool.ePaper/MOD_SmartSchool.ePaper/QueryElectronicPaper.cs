@@ -40,5 +40,12 @@ namespace MOD_SmartSchool.ePaper
             helper.AddElement("Condition", "Semester", semester);
             return FeatureBase.CallService("SmartSchool.ElectronicPaper.GetDetailList", new DSRequest(helper));
         }
+
+        public static DSResponse GetDetailListALL()
+        {
+            DSXmlHelper helper = new DSXmlHelper("Request");
+            helper.AddElement("All");
+            return FeatureBase.CallService("SmartSchool.ElectronicPaper.GetDetailList", new DSRequest(helper));
+        }
     }
 }

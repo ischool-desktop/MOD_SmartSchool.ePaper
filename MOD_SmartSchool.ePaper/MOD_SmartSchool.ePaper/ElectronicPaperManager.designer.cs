@@ -28,17 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPaperList = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOverview = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMetadata = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSchoolYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSemester = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colItemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colViewerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSchoolYear = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cboSemester = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
@@ -57,6 +48,16 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOverview = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMetadata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colItemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colViewerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSchoolYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSemester = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkDisplayAll = new DevComponents.DotNetBar.Controls.CheckBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaperList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,19 +77,19 @@
             this.colName,
             this.colOverview,
             this.colMetadata,
-            this.colSchoolYear,
-            this.colSemester,
             this.colItemCount,
             this.colViewerType,
-            this.colTimestamp});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaperList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colTimestamp,
+            this.colSchoolYear,
+            this.colSemester});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaperList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPaperList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvPaperList.Location = new System.Drawing.Point(6, 40);
             this.dgvPaperList.Name = "dgvPaperList";
@@ -97,65 +98,6 @@
             this.dgvPaperList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPaperList.Size = new System.Drawing.Size(666, 316);
             this.dgvPaperList.TabIndex = 2;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            this.colID.Visible = false;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.HeaderText = "名稱";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colOverview
-            // 
-            this.colOverview.HeaderText = "總覽";
-            this.colOverview.Name = "colOverview";
-            this.colOverview.Visible = false;
-            // 
-            // colMetadata
-            // 
-            this.colMetadata.HeaderText = "其他資訊";
-            this.colMetadata.Name = "colMetadata";
-            this.colMetadata.Visible = false;
-            // 
-            // colSchoolYear
-            // 
-            this.colSchoolYear.HeaderText = "學年度";
-            this.colSchoolYear.Name = "colSchoolYear";
-            this.colSchoolYear.Visible = false;
-            // 
-            // colSemester
-            // 
-            this.colSemester.HeaderText = "學期";
-            this.colSemester.Name = "colSemester";
-            this.colSemester.Visible = false;
-            // 
-            // colItemCount
-            // 
-            this.colItemCount.HeaderText = "項目";
-            this.colItemCount.Name = "colItemCount";
-            this.colItemCount.Visible = false;
-            this.colItemCount.Width = 75;
-            // 
-            // colViewerType
-            // 
-            this.colViewerType.FillWeight = 90F;
-            this.colViewerType.HeaderText = "對象";
-            this.colViewerType.Name = "colViewerType";
-            this.colViewerType.ReadOnly = true;
-            this.colViewerType.Width = 90;
-            // 
-            // colTimestamp
-            // 
-            this.colTimestamp.HeaderText = "建立時間";
-            this.colTimestamp.Name = "colTimestamp";
-            this.colTimestamp.ReadOnly = true;
-            this.colTimestamp.Width = 150;
             // 
             // cboSchoolYear
             // 
@@ -317,11 +259,86 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 150;
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "名稱";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colOverview
+            // 
+            this.colOverview.HeaderText = "總覽";
+            this.colOverview.Name = "colOverview";
+            this.colOverview.Visible = false;
+            // 
+            // colMetadata
+            // 
+            this.colMetadata.HeaderText = "其他資訊";
+            this.colMetadata.Name = "colMetadata";
+            this.colMetadata.Visible = false;
+            // 
+            // colItemCount
+            // 
+            this.colItemCount.HeaderText = "項目";
+            this.colItemCount.Name = "colItemCount";
+            this.colItemCount.Visible = false;
+            this.colItemCount.Width = 75;
+            // 
+            // colViewerType
+            // 
+            this.colViewerType.FillWeight = 90F;
+            this.colViewerType.HeaderText = "對象";
+            this.colViewerType.Name = "colViewerType";
+            this.colViewerType.ReadOnly = true;
+            this.colViewerType.Width = 90;
+            // 
+            // colTimestamp
+            // 
+            this.colTimestamp.HeaderText = "建立時間";
+            this.colTimestamp.Name = "colTimestamp";
+            this.colTimestamp.ReadOnly = true;
+            this.colTimestamp.Width = 150;
+            // 
+            // colSchoolYear
+            // 
+            this.colSchoolYear.HeaderText = "學年度";
+            this.colSchoolYear.Name = "colSchoolYear";
+            // 
+            // colSemester
+            // 
+            this.colSemester.HeaderText = "學期";
+            this.colSemester.Name = "colSemester";
+            // 
+            // chkDisplayAll
+            // 
+            this.chkDisplayAll.AutoSize = true;
+            this.chkDisplayAll.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.chkDisplayAll.BackgroundStyle.Class = "";
+            this.chkDisplayAll.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chkDisplayAll.Location = new System.Drawing.Point(400, 7);
+            this.chkDisplayAll.Name = "chkDisplayAll";
+            this.chkDisplayAll.Size = new System.Drawing.Size(80, 21);
+            this.chkDisplayAll.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chkDisplayAll.TabIndex = 7;
+            this.chkDisplayAll.Text = "顯示全部";
+            this.chkDisplayAll.CheckedChanged += new System.EventHandler(this.chkDisplayAll_CheckedChanged);
+            // 
             // ElectronicPaperManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 393);
+            this.Controls.Add(this.chkDisplayAll);
             this.Controls.Add(this.btnRename);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
@@ -366,10 +383,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOverview;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMetadata;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSchoolYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSemester;
         private System.Windows.Forms.DataGridViewTextBoxColumn colItemCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colViewerType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTimestamp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSchoolYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSemester;
+        private DevComponents.DotNetBar.Controls.CheckBoxX chkDisplayAll;
     }
 }
