@@ -70,5 +70,19 @@ namespace MOD_SmartSchool.ePaper
                 return FISCA.Permission.UserAcl.Current[學生電子報表上傳].Executable;
             }
         }
+
+        public static string 教師電子報表上傳 { get { return "teacher.ePaper.FE9E7A48 - BCA3 - 4F54 - AA9D - 18602C3365CB"; } }
+
+        /// <summary>
+        /// 學生電子報
+        /// </summary>
+        public static bool 教師電子報表上傳權限
+        {
+            get
+            {
+                return FISCA.Permission.UserAcl.Current[教師電子報表上傳].Executable;
+            }
+        }
+
     }
 }

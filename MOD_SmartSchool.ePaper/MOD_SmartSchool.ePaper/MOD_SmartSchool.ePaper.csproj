@@ -59,10 +59,9 @@
       <HintPath>Library\Campus.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Campus.ePaper, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Campus.ePaper, Version=1.0.0.15, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\Campus.ePaper.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -171,6 +170,12 @@
       <DependentUpon>ElectronicPaperManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FeatureBase.cs" />
+    <Compile Include="Ribbon\SelectOneFile_Teacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ribbon\SelectOneFile_Teacher.designer.cs">
+      <DependentUpon>SelectOneFile_Teacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ribbon\SelectOneFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ElectronicPaperManager.resx">
       <DependentUpon>ElectronicPaperManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon\SelectOneFile_Teacher.resx">
+      <DependentUpon>SelectOneFile_Teacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbon\SelectOneFile.resx">
       <DependentUpon>SelectOneFile.cs</DependentUpon>

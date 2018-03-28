@@ -45,6 +45,17 @@ namespace MOD_SmartSchool.ePaper
                 f.ShowDialog();
             };
 
+
+            //
+            RibbonBarItem TeacherItem = FISCA.Presentation.MotherForm.RibbonBarItems["教師", "其它"];
+            TeacherItem["電子報表上傳"].Image = Properties.Resources.files_up_64;
+            TeacherItem["電子報表上傳"].Enable = Permissions.教師電子報表上傳權限;
+            TeacherItem["電子報表上傳"].Click += delegate
+            {
+                SelectOneFile_Teacher f = new SelectOneFile_Teacher();
+                f.ShowDialog();
+            };
+
             //資料項目
 
             FeatureAce UserPermission;
@@ -74,6 +85,9 @@ namespace MOD_SmartSchool.ePaper
 
             detail = RoleAclSource.Instance["班級"]["資料項目"];
             detail.Add(new DetailItemFeature(Permissions.班級電子報表, "班級電子報表"));
+
+            ribbon = RoleAclSource.Instance["教師"]["功能按鈕"];
+            ribbon.Add(new RibbonFeature(Permissions.教師電子報表上傳, "電子報表上傳"));
 
             detail = RoleAclSource.Instance["教師"]["資料項目"];
             detail.Add(new DetailItemFeature(Permissions.教師電子報表, "教師電子報表"));
