@@ -43,7 +43,7 @@ namespace MOD_SmartSchool.ePaper
             ofd.Multiselect = true;
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                this.Text = "學生電子檔案上傳(檔案開啟中...)";
+                this.Text = "教師電子檔案上傳(檔案開啟中...)";
                 BGW.RunWorkerAsync(ofd);
             }
             else
@@ -97,7 +97,7 @@ namespace MOD_SmartSchool.ePaper
         void BGW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             btnUpdate.Enabled = true;
-            this.Text = "學生電子檔案上傳";
+            this.Text = "教師電子檔案上傳";
             if (!e.Cancelled)
             {
                 if (e.Error == null)
@@ -147,13 +147,13 @@ namespace MOD_SmartSchool.ePaper
                 }
                 else
                 {
-                    this.Text = "學生電子檔案上傳(發生錯誤!!)";
+                    this.Text = "教師電子檔案上傳(發生錯誤!!)";
                     MsgBox.Show("發生錯誤!!\n" + e.Error.Message);
                 }
             }
             else
             {
-                this.Text = "學生電子檔案上傳(作業已中止!!)";
+                this.Text = "教師電子檔案上傳(作業已中止!!)";
                 MsgBox.Show("作業已中止!!");
             }
         }
